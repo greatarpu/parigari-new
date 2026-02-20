@@ -1,0 +1,422 @@
+/*general css */
+@media screen and (max-width: 699px) {
+
+    /* Styles placed here only apply to screens 0px to 699px wide */
+    .carousel-inner {
+        height: 350px !important;
+    }
+
+    .hero-slider .carousel-item {
+        height: 350px !important;
+        min-height: 350px !important;
+    }
+
+    .about-header {
+        padding: 30px 0px !important;
+    }
+
+    .donate-header {
+        padding: 30px 0px !important;
+    }
+
+    .contact-header {
+        padding: 30px 0px !important;
+    }
+
+    img.logo {
+        height: 60px !important;
+    }
+
+    .navbar-brand {
+        font-size: 16px !important;
+    }
+
+    .map-container {
+        margin-top: 12px;
+    }
+}
+
+.tools-left {
+    display: none !important;
+}
+
+img.logo {
+    height: 80px;
+}
+
+a.nav-link.active {
+    color: #ae1500 !important;
+    font-weight: 600;
+    border-bottom: solid 1px #ae1500;
+}
+
+a.nav-link {
+    margin-right: 20px;
+}
+
+img.footer-logo {
+    height: 100px;
+    width: auto;
+}
+
+p.social-media a {
+    margin-right: 8px;
+    border-bottom: 0px;
+    text-decoration: none;
+}
+
+p.social-media a:hover {
+    margin-right: 8px;
+    border-bottom: 0px;
+}
+
+
+a.contact-email {
+    color: #6c757d !important;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+a.contact-email:hover {
+    color: #ae1500 !important;
+    font-weight: 600;
+    border-bottom: solid 1px #ae1500;
+}
+
+ul.list-unstyled li a:hover {
+    color: #ae1500 !important;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+:root {
+    --base-font-size: 16px;
+    --primary-color: #ae1500;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --text-muted: #6c757d;
+    --card-bg: #ffffff;
+    --nav-bg: #ffffff;
+    --section-alt: #f8f9fa;
+    --bs-primary-rgb: 174, 21, 0 !important;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --text-muted: #adb5bd;
+    --card-bg: #1e1e1e;
+    --nav-bg: #1a1a1a;
+    --section-alt: #181818;
+    --primary-color: #ae1500 !important;
+
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--base-font-size);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+
+/* Accessibility & WhatsApp Floating Icons */
+.tools-container {
+    position: fixed;
+    bottom: 20px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tools-left {
+    left: 20px;
+}
+
+.tools-right {
+    right: 20px;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.bg-whatsapp {
+    background-color: #25d366;
+}
+
+.bg-acc {
+    background-color: var(--primary-color);
+}
+
+/* General Theme Fixes */
+.navbar {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link,
+.navbar-brand {
+    color: var(--text-color) !important;
+}
+
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-padding {
+    padding: 30px 0;
+}
+
+/*home page css */
+.bg-custom-alt {
+    background-color: var(--section-alt);
+}
+
+.text-custom-muted {
+    color: var(--text-muted);
+}
+
+/* Carousel Styles */
+.hero-slider .carousel-item {
+    height: 75vh;
+    min-height: 400px;
+}
+
+.hero-slider img {
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.6);
+}
+
+#map {
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+}
+
+/*about page css */
+.about-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/group.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+/*people page css */
+/* Founder Tribute Section */
+.founder-memorial {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/bg1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 0;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.founder-img {
+    width: 250px;
+    height: auto;
+    /* object-fit: cover; */
+    border: 5px solid white;
+    /* border-radius: 50%; */
+    margin-bottom: 20px;
+}
+
+/* Trustee Cards */
+.trustee-card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.trustee-card:hover {
+    transform: translateY(-10px);
+}
+
+.trustee-img-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: var(--section-alt);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.trustee-img-placeholder img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.tools-container {
+    position: fixed;
+    bottom: 20px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tools-left {
+    left: 20px;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bg-acc {
+    background-color: var(--primary-color);
+}
+
+/*about page */
+.bg-custom-alt {
+    background-color: var(--section-alt);
+}
+
+.timeline-box {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: var(--nav-bg);
+}
+
+/*contact page css */
+.hero-inner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/group.jpg');
+    background-size: cover;
+    padding: 100px 0;
+    color: white;
+}
+
+.social-card {
+    transition: transform 0.3s;
+    border: none;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery-img:hover {
+    opacity: 0.8;
+}
+
+.testimonial-box {
+    border-left: 5px solid var(--primary-color);
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+}
+
+.contact-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/young-colleagues-working-together-cafe.jpg');
+    background-size: cover;
+    background-position: 0px 30%;
+    color: white;
+    padding: 100px 0;
+}
+
+.contact-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/young-colleagues-working-together-cafe.jpg');
+    background-size: cover;
+    background-position: 0px 30%;
+    color: white;
+    padding: 100px 0;
+}
+
+/* Modal PDF viewer */
+#darpanModal .modal-dialog {
+    max-width: 860px;
+}
+
+#darpanModal .modal-body {
+    padding: 0;
+}
+
+#darpanModal iframe {
+    width: 100%;
+    height: 75vh;
+    border: none;
+    display: block;
+}
+
+/*bootstrap css over ride*/
+.btn.btn-primary {
+    background-color: #ae1500;
+    /* Your primary brand color */
+    border-color: #ae1500;
+    color: #ffffff;
+    /* Keeps text white for high contrast */
+}
+
+/* Styles for hover, focus, and active states */
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+    background-color: #8a1100;
+    /* A slightly darker shade for interaction */
+    border-color: #8a1100;
+    outline: none;
+    /* Removes default focus rings if desired */
+    box-shadow: 0 0 0 0.2rem rgba(174, 21, 0, 0.25);
+    /* Adds a subtle themed glow on focus */
+}
+
+.text-primary {
+    color: #8a1100 !important;
+}
+
+.text-primary {
+    --bs-text-opacity: 1;
+    color: #8a1100 !important;
+}
