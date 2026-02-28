@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers & Internships | Parigari Social Welfare Trust</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <style>
+        .careers-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('./images/young-colleagues-working-together-cafe.jpg');
+            background-size: cover;
+            background-position: 0px -400px;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .job-card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .job-card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 28px 32px;
+        }
+
+        .job-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 5px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 4px 4px 0 0;
+        }
+
+        .section-divider {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 14px;
+            margin: 22px 0 10px;
+        }
+
+        .section-divider h6 {
+            margin-bottom: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .job-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-body ul li {
+            padding: 5px 0 5px 24px;
+            position: relative;
+            font-size: 0.93rem;
+        }
+
+        .job-body ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.78rem;
+            top: 8px;
+        }
+
+        .why-card {
+            border: none;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            padding: 30px 22px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            background-color: var(--card-bg);
+            height: 100%;
+        }
+
+        .why-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #fdecea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .upload-box {
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            background: var(--section-alt);
+        }
+
+        .upload-box:hover {
+            border-color: var(--primary-color);
+            background: #fff5f5;
+        }
+
+        .upload-box input[type="file"] {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .upload-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .upload-label span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .file-chosen {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        @media (max-width: 699px) {
+            .careers-header {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+
+    <!-- Accessibility Tools (Left) -->
+    <div class="tools-container tools-left">
+        <button class="btn-circle bg-acc" id="toggleTheme" title="Toggle Dark/Light Mode"><i
+                class="fas fa-adjust"></i></button>
+        <button class="btn-circle bg-acc" id="increaseFont" title="Increase Font"><i class="fas fa-plus"></i></button>
+        <button class="btn-circle bg-acc" id="decreaseFont" title="Decrease Font"><i class="fas fa-minus"></i></button>
+    </div>
+
+    <!-- WhatsApp Floating Button (Right) -->
+    <div class="tools-container tools-right">
+        <a href="https://wa.me/9941309880" target="_blank" class="btn-circle bg-whatsapp" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img class="logo" src="./images/logo.jpg" alt="Parigari Logo"> Parigari Social Welfare Trust
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(var(--invert-val, 0));"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="careers.html">Careers</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill px-4" href="donate.html">Donate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="hero-inner text-center careers-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Careers &amp; Internships</h1>
+            <p class="lead">Join our mission to serve the elderly, educate children, and heal communities across Tamil
+                Nadu.</p>
+        </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section class="section-padding bg-custom-alt">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Why Intern With Us?</h2>
+                <p class="text-custom-muted">Make a real difference from day one — not someday.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h6 class="fw-bold mb-2">Real Impact</h6>
+                        <p class="text-custom-muted small mb-0">Work directly with elderly residents, orphaned children,
+                            and rural communities. Your contribution is visible every single day.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-book-open"></i></div>
+                        <h6 class="fw-bold mb-2">Learn &amp; Grow</h6>
+                        <p class="text-custom-muted small mb-0">Gain hands-on experience in social work, NGO operations,
+                            and community outreach alongside seasoned practitioners.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-user-tie"></i></div>
+                        <h6 class="fw-bold mb-2">Mentorship</h6>
+                        <p class="text-custom-muted small mb-0">Work closely with our founders and core team who bring
+                            decades of grassroots welfare experience to guide you.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-certificate"></i></div>
+                        <h6 class="fw-bold mb-2">Certificate &amp; Reference</h6>
+                        <p class="text-custom-muted small mb-0">Receive an official internship certificate and a strong
+                            professional reference letter upon successful completion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listing -->
+    <section class="section-padding" id="openings">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Open Position</h2>
+                <p class="text-custom-muted">We currently have the following internship opportunity available.</p>
+            </div>
+
+            <div class="card job-card">
+                <!-- Card Header -->
+                <div class="job-card-header">
+                    <div class="job-badge">Internship &nbsp;·&nbsp; 3–6 Months</div>
+                    <h3 class="fw-bold mb-1">Social Work Intern</h3>
+                    <p class="mb-3" style="font-size:0.93rem;opacity:0.8;">Parigari Social Welfare Trust &nbsp;—&nbsp;
+                        Chennai &amp; Minjur, Tamil Nadu</p>
+                    <div>
+                        <span class="meta-tag"><i class="fas fa-map-marker-alt"></i> Chennai &amp; Minjur</span>
+                        <span class="meta-tag"><i class="fas fa-clock"></i> 3–6 Months</span>
+                        <span class="meta-tag"><i class="fas fa-users"></i> 2 Openings</span>
+                        <span class="meta-tag"><i class="fas fa-calendar-alt"></i> Rolling Applications</span>
+                    </div>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body p-4 job-body">
+
+                    <div class="section-divider">
+                        <h6><i class="fas fa-info-circle me-2"></i>About the Role</h6>
+                    </div>
+                    <p class="text-custom-muted">As a <strong>Social Work Intern</strong> at Parigari Social Welfare
+                        Trust, you will actively support our operations across our old age home in Minjur and our
+                        outreach programs in rural villages. You will work directly with beneficiaries — elderly
+                        residents, orphaned children, and underserved communities — helping deliver care, education, and
+                        medical assistance.</p>
+                    <p class="text-custom-muted">This is a fieldwork-intensive internship ideal for students pursuing
+                        social work, psychology, public health, or social sciences, or for graduates who are passionate
+                        about humanitarian service.</p>
+
+                    <div class="section-divider">
+                        <h6><i class="fas fa-tasks me-2"></i>Key Responsibilities</h6>
+                    </div>
+                    <ul class="text-custom-muted">
+                        <li>Assist in day-to-day operations of our old age home, ensuring the wellbeing and dignity of
+                            residents.</li>
+                        <li>Support coordination of free medical camps and eye surgery programs in rural villages.</li>
+                        <li>Help organise and facilitate free education sessions for destitute children.</li>
+                        <li>Conduct community outreach visits and document beneficiary stories and progress reports.
+                        </li>
+                        <li>Assist with fundraising events, donor communications, and volunteer coordination.</li>
+                        <li>Maintain case notes, attendance records, and field reports under supervisor guidance.</li>
+                        <li>Contribute to social media documentation — photography and short program write-ups.</li>
+                    </ul>
+
+                    <div class="section-divider">
+                        <h6><i class="fas fa-user-check me-2"></i>Who Should Apply</h6>
+                    </div>
+                    <ul class="text-custom-muted">
+                        <li>Students or recent graduates in Social Work (BSW/MSW), Psychology, Public Health, or related
+                            fields.</li>
+                        <li>Individuals with a genuine passion for community service and social welfare.</li>
+                        <li>Good communication skills in Tamil (required); English or Hindi preferred.</li>
+                        <li>Willingness to travel to field locations in and around Chennai.</li>
+                        <li>Ability to commit to at least 3 months, minimum 4 days per week.</li>
+                        <li>Emotionally resilient, empathetic, and team-oriented.</li>
+                    </ul>
+
+                    <div class="section-divider">
+                        <h6><i class="fas fa-gift me-2"></i>What We Offer</h6>
+                    </div>
+                    <ul class="text-custom-muted">
+                        <li>Immersive grassroots experience across multiple social welfare programs.</li>
+                        <li>Direct mentorship from experienced NGO founders and field staff.</li>
+                        <li>Official internship certificate and a strong professional reference letter.</li>
+                        <li>Reimbursement of travel expenses for all field visits.</li>
+                        <li>Potential stipend for exceptional interns (subject to funding availability).</li>
+                    </ul>
+
+                    <div class="mt-4">
+                        <a href="#apply" class="btn btn-primary rounded-pill px-4 py-2 fw-bold">
+                            <i class="fas fa-paper-plane me-2"></i>Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="section-padding bg-custom-alt" id="apply">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-4 shadow-sm border-0">
+                        <h2 class="fw-bold mb-1">Apply for the Internship</h2>
+                        <p class="text-custom-muted mb-4">Fill in your details below. We'll get back to you within 5–7
+                            working days.</p>
+
+                        <form id="careerForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">First Name *</label>
+                                    <input type="text" id="careerFirstName" class="form-control"
+                                        placeholder="e.g. Priya" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Last Name *</label>
+                                    <input type="text" id="careerLastName" class="form-control"
+                                        placeholder="e.g. Sundaram" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Email Address *</label>
+                                    <input type="email" id="careerEmail" class="form-control"
+                                        placeholder="you@email.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Phone Number *</label>
+                                    <input type="tel" id="careerPhone" class="form-control"
+                                        placeholder="+91 98765 43210" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Applying For *</label>
+                                    <select id="careerRole" class="form-select" required>
+                                        <option value="" disabled selected>Select a role</option>
+                                        <option value="Social Work Intern">Social Work Intern</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Available Start Date *</label>
+                                    <input type="text" id="careerStart" class="form-control"
+                                        placeholder="e.g. March 2025" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Educational Background *</label>
+                                    <input type="text" id="careerEducation" class="form-control"
+                                        placeholder="e.g. MSW (2nd Year), Anna University" required>
+                                </div>
+
+                                <!-- Resume Upload -->
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Resume / CV *</label>
+                                    <div class="upload-box" onclick="document.getElementById('resumeFile').click()">
+                                        <input type="file" id="resumeFile" accept=".pdf,.doc,.docx"
+                                            onchange="showFileName(this, 'resumeName')">
+                                        <div class="upload-icon"><i class="fas fa-file-upload"></i></div>
+                                        <div class="upload-label"><span>Click to upload</span> your Resume (PDF or DOC)
+                                        </div>
+                                        <div class="file-chosen" id="resumeName"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Cover Letter Upload -->
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">
+                                        Cover Letter
+                                        <span class="text-custom-muted fw-normal">(Optional)</span>
+                                    </label>
+                                    <div class="upload-box" onclick="document.getElementById('coverFile').click()">
+                                        <input type="file" id="coverFile" accept=".pdf,.doc,.docx"
+                                            onchange="showFileName(this, 'coverName')">
+                                        <div class="upload-icon"><i class="fas fa-envelope-open-text"></i></div>
+                                        <div class="upload-label"><span>Click to upload</span> your Cover Letter (PDF or
+                                            DOC)</div>
+                                        <div class="file-chosen" id="coverName"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Why do you want to intern with Parigari?
+                                        *</label>
+                                    <textarea id="careerMotivation" class="form-control shadow-none" rows="4"
+                                        placeholder="Tell us about your motivation, relevant experience, and what you hope to contribute..."
+                                        required></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="careerConsent" required>
+                                        <label class="form-check-label small text-custom-muted" for="careerConsent">
+                                            I consent to Parigari Social Welfare Trust storing and using my information
+                                            to process this application. My data will not be shared with third parties.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">
+                                        <i class="fas fa-paper-plane me-2"></i>Submit Application
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Success Message -->
+                        <div class="alert alert-success mt-4 d-none" id="successAlert" role="alert">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <strong>Application sent!</strong> Thank you for applying. We'll be in touch within 5–7
+                            working days at the email you provided.
+                        </div>
+
+                        <p class="text-center text-custom-muted small mt-4 mb-0">
+                            Prefer to email directly? Send your resume to
+                            <a href="mailto:contactus@parigari.org" class="contact-email">contactus@parigari.org</a>
+                            with subject: <em>"Social Work Intern Application"</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-3 border-top">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Contact Info</h5>
+                    <p>
+                        <b>Phone:</b> +91 9941309880 / +91 6381031622 <br>
+                        <b>Email:</b> <a href="mailto:contactus@parigari.org"
+                            class="contact-email">contactus@parigari.org</a>
+                    </p>
+                    <p class="social-media">
+                        <a href="https://www.facebook.com/www.parigari.org/" target="_blank" class="text-custom-muted">
+                            <i class="fab fa-facebook fa-xl"></i>
+                        </a>
+                        <a href="#" class="text-custom-muted">
+                            <i class="fab fa-instagram fa-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/parigari-social-welfare-trust-1b597559/" target="_blank"
+                            class="text-custom-muted">
+                            <i class="fab fa-linkedin fa-xl"></i>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Address</h5>
+                    <p class="text-custom-muted small"><b>Old age Home Address:</b> <br>No.1, Mettu rettypalayam,
+                        Nallur, Minjur</p>
+                    <p class="text-custom-muted small"><b>Office Address:</b> <br>No.2/46, Bharathiyar Nagar, 2nd
+                        Street, Ennore Beach Road, Chennai - 57.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-custom-muted text-decoration-none" data-bs-toggle="modal"
+                                data-bs-target="#privacyModal">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="text-custom-muted text-decoration-none">Volunteer With Us</a>
+                        </li>
+                        <li><a href="#" class="text-custom-muted text-decoration-none" data-bs-toggle="modal"
+                                data-bs-target="#darpanModal">DARPAN</a></li>
+                        <li><a href="donate.html" class="text-custom-muted text-decoration-none">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3 text-center">
+                    <h5 class="fw-bold">Scan &amp; Donate</h5>
+                    <div style="width: 100px; height: 100px; background: #eee; margin: 0 auto; border: 1px solid #ddd;">
+                        <a
+                            href="upi://pay?pa=9941309880.eazypay@icici&pn=M/S.PARIGARI SOCIAL WELFARE TRUST &tr=EZYS9941309880&cu=INR&mc=8398">
+                            <img src="./images/QRCode.png" alt="QR" style="width:100%;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="bg-dark py-3">
+        <div class="container">
+            <div class="col-md-12 text-center">
+                <p class="text-white mb-0">© 2026 Parigari Social Welfare Trust. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DARPAN Modal -->
+    <div class="modal fade" id="darpanModal" tabindex="-1" aria-labelledby="darpanModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="darpanModalLabel">
+                        <i class="fas fa-file-alt me-2 text-primary"></i>DARPAN Registration Certificate
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="./images/darpan.pdf" title="DARPAN Registration Certificate"
+                        style="width:100%;height:75vh;border:none;display:block;">
+                        <p class="p-4 text-muted">Your browser does not support embedded PDFs.
+                            <a href="./images/darpan.pdf" target="_blank">Click here to open the PDF.</a>
+                        </p>
+                    </iframe>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://ngodarpan.gov.in/#/search-ngo" target="_blank" class="btn btn-outline-primary">
+                        <i class="fas fa-search me-1"></i> Search on NGO Darpan
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="privacyModalLabel">
+                        <i class="fas fa-shield-alt me-2 text-primary"></i>Privacy Policy
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 py-4" style="font-size: 0.95rem; line-height: 1.8;">
+                    <h6 class="fw-bold">1. Information We Collect</h6>
+                    <p>When you contact us or submit an Expression of Interest form, we collect your name, email
+                        address, phone number, and any message or motivation you provide. This information is used
+                        solely to respond to your inquiry or process your application.</p>
+                    <h6 class="fw-bold">2. How We Use Your Information</h6>
+                    <p>Your personal information is used to communicate with you regarding your inquiry, application,
+                        donation, or volunteer activity. We do not use your data for advertising or sell it to any third
+                        party.</p>
+                    <h6 class="fw-bold">3. Data Sharing</h6>
+                    <p>Parigari Social Welfare Trust does not share your personal information with any external
+                        organization, agency, or individual, except where required by law or with your explicit consent.
+                    </p>
+                    <h6 class="fw-bold">4. Data Security</h6>
+                    <p>We take reasonable steps to protect the information you provide against unauthorized access,
+                        disclosure, alteration, or destruction. All communications through our WhatsApp channel are
+                        secured by end-to-end encryption.</p>
+                    <h6 class="fw-bold">5. Cookies</h6>
+                    <p>Our website may use basic cookies to improve your browsing experience. These cookies do not
+                        collect personally identifiable information and can be disabled through your browser settings.
+                    </p>
+                    <h6 class="fw-bold">6. Your Rights</h6>
+                    <p>You have the right to request access to, correction of, or deletion of your personal data held by
+                        us. To exercise these rights, please contact us at <a
+                            href="mailto:contactus@parigari.org">contactus@parigari.org</a>.</p>
+                    <h6 class="fw-bold">7. Changes to This Policy</h6>
+                    <p>Parigari Social Welfare Trust reserves the right to update this Privacy Policy at any time.
+                        Changes will be reflected on this page. We encourage you to review this policy periodically.</p>
+                    <h6 class="fw-bold">8. Contact Us</h6>
+                    <p class="mb-0">If you have any questions about this Privacy Policy, please reach out to us at <a
+                            href="mailto:contactus@parigari.org">contactus@parigari.org</a> or call us at +91
+                        9941309880.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function showFileName(input, displayId) {
+            const el = document.getElementById(displayId);
+            el.textContent = input.files[0] ? '📎 ' + input.files[0].name : '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const WHATSAPP_NUMBER = "919941309880";
+
+            function sendToWhatsApp(message) {
+                const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+                window.open(url, '_blank').focus();
+            }
+
+            // Career Application → WhatsApp + Email
+            document.getElementById('careerForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const firstName = document.getElementById('careerFirstName').value;
+                const lastName = document.getElementById('careerLastName').value;
+                const email = document.getElementById('careerEmail').value;
+                const phone = document.getElementById('careerPhone').value;
+                const role = document.getElementById('careerRole').value;
+                const start = document.getElementById('careerStart').value;
+                const education = document.getElementById('careerEducation').value;
+                const motivation = document.getElementById('careerMotivation').value;
+                const resumeFile = document.getElementById('resumeFile').files[0];
+                const hasCover = document.getElementById('coverFile').files[0];
+
+                if (!resumeFile) {
+                    alert('Please upload your Resume before submitting.');
+                    return;
+                }
+
+                // Send via WhatsApp
+                const whatsappMsg =
+                    `*New%20Internship%20Application*%0A%0A` +
+                    `*Role:*%20${encodeURIComponent(role)}%0A` +
+                    `*Name:*%20${encodeURIComponent(firstName + ' ' + lastName)}%0A` +
+                    `*Email:*%20${encodeURIComponent(email)}%0A` +
+                    `*Phone:*%20${encodeURIComponent(phone)}%0A` +
+                    `*Available%20From:*%20${encodeURIComponent(start)}%0A` +
+                    `*Education:*%20${encodeURIComponent(education)}%0A` +
+                    `*Motivation:*%20${encodeURIComponent(motivation)}%0A%0A` +
+                    `_(Resume${hasCover ? '%20%26%20Cover%20Letter' : ''}%20will%20be%20emailed%20separately)_`;
+
+                sendToWhatsApp(whatsappMsg);
+
+                // Open pre-filled email
+                const emailBody =
+                    `Application for: ${role}\n\n` +
+                    `Name: ${firstName} ${lastName}\n` +
+                    `Email: ${email}\n` +
+                    `Phone: ${phone}\n` +
+                    `Available From: ${start}\n` +
+                    `Education: ${education}\n\n` +
+                    `Motivation:\n${motivation}\n\n` +
+                    `---\nPlease find my Resume${hasCover ? ' and Cover Letter' : ''} attached to this email.`;
+
+                setTimeout(() => {
+                    window.location.href =
+                        `mailto:contactus@parigari.org` +
+                        `?subject=${encodeURIComponent('Internship Application – ' + firstName + ' ' + lastName + ' – ' + role)}` +
+                        `&body=${encodeURIComponent(emailBody)}`;
+                }, 800);
+
+                // Show success banner
+                const successEl = document.getElementById('successAlert');
+                successEl.classList.remove('d-none');
+                successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                this.reset();
+                document.getElementById('resumeName').textContent = '';
+                document.getElementById('coverName').textContent = '';
+            });
+
+            // Theme Toggle
+            const toggleBtn = document.getElementById('toggleTheme');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    document.body.classList.toggle('dark-mode');
+                });
+            }
+
+            // Font Size Controls
+            let fontSize = 16;
+            const increaseBtn = document.getElementById('increaseFont');
+            const decreaseBtn = document.getElementById('decreaseFont');
+            if (increaseBtn) increaseBtn.addEventListener('click', function () {
+                fontSize = Math.min(fontSize + 1, 22);
+                document.body.style.fontSize = fontSize + 'px';
+            });
+            if (decreaseBtn) decreaseBtn.addEventListener('click', function () {
+                fontSize = Math.max(fontSize - 1, 12);
+                document.body.style.fontSize = fontSize + 'px';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
